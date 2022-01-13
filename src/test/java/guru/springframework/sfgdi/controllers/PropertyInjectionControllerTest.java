@@ -10,10 +10,9 @@ class PropertyInjectionControllerTest {
 
     PropertyInjectionController controller;
 
-    /*nel before each setto le condizioni di testing */
     @BeforeEach
     void setUp(){
-        controller = new PropertyInjectionController(); //sto facendo un mock
+        controller = new PropertyInjectionController();
 
         controller.greetingService = new GreetingServiceImpl();
     }
