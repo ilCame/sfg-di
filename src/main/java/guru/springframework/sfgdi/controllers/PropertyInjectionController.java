@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class PropertyInjectionController {
 
-    @Autowired // questo dice a spring di inniettare una istanza di greeting service ma dai dei problemi comunque, dobbiamo dire a spring anche di service
+    @Autowired
     public GreetingService greetingService;
 
     public String getGreeting(){

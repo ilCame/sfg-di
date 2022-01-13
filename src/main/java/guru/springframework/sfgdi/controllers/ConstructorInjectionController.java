@@ -9,7 +9,6 @@ public class ConstructorInjectionController {
 
     private final GreetingService greetingService;
 
-    // dato che il costruttore e' l'unico modo di instanziare l'oggetto, non abbiamo bisogno di mettere l'autowire
     public ConstructorInjectionController(GreetingService greetingService) {
         this.greetingService = greetingService;
     }

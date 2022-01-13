@@ -23,9 +23,6 @@ public class SfgDiApplication {
 
 		System.out.println("---- property ----");
 
-		/* questo non va bene perche' la classe non e' annotata come controller per spring
-		 * ma anche aggiungendo la propieta' non andrebbe bene perche' otterremmo un null pointer exception
-		 * la risolviamo dicendo a spring di gestire il controller e il service*/
 		PropertyInjectionController propertyInjectionController = (PropertyInjectionController)  ctx.getBean("propertyInjectionController");
 
 		System.out.println(propertyInjectionController.getGreeting());

@@ -9,7 +9,7 @@ public class SettingInjectedController {
 
     private GreetingService greetingService;
 
-    @Autowired // sto dicendo a spring che vogliamo un servizio di greeting iniettato dentro questo bean
+    @Autowired
     public void setGreetingService(GreetingService greetingService) {
         this.greetingService = greetingService;
     }
