@@ -26,8 +26,6 @@ public class SfgDiApplication {
 		ConstructorInjectionController constructorInjectionController = (ConstructorInjectionController) ctx.getBean("constructorInjectionController");
 		System.out.println(constructorInjectionController.getGreeting());
 
-		/*Per farlo funzionare dobbiamo inserire questa linea di codice (spring.profiles.active = EN) nell'application properties
-		* mi permette di cambiare il profilo, per ora ne abbiamo 2 uno EN ed uno IT*/
 		System.out.println("---- i18nController ----");
 		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
 		System.out.println(i18nController.sayHello());
