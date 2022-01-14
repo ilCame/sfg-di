@@ -9,7 +9,6 @@ public class ConstructorInjectionController {
 
     private final GreetingService greetingService;
 
-    // inietto in modo tale che sa quale dei due prendere, devo mettere il nome del bean, quindi la prima lettera minuscola
     public ConstructorInjectionController(@Qualifier("constructorGreetingService") GreetingService greetingService) {
         this.greetingService = greetingService;
     }
