@@ -1,10 +1,8 @@
 package guru.springframework.sfgdi.services;
 
-import org.springframework.context.annotation.Primary;
-import org.springframework.stereotype.Service;
-
-@Primary
-@Service
+//avendolo aggiunto a greatingservicecinfig posso togliere entrambe le annotazioni
+//@Primary
+//@Service
 public class PrimaryGreetingService implements GreetingService{
     @Override
     public String sayGreeting() {
