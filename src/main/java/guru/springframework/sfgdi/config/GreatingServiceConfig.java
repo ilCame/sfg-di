@@ -6,12 +6,10 @@ import guru.springframework.sfgdi.services.SetterInjectedGreetingService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-/*l'annotazione configuration dice a spring di controllare in questa classe
-* perche' sara' una classe di configurazione di spring*/
 @Configuration
 public class GreatingServiceConfig {
 
-    @Bean //i nome del bean che viene generato e' lo stesso del metodo
+    @Bean
     ConstructorGreetingService constructorGreetingService(){
         return new ConstructorGreetingService();
     }
