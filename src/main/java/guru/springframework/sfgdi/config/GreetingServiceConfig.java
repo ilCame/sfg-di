@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Profile;
 @Configuration
 public class GreetingServiceConfig {
 
-    @Bean //sto cercando di mimare con la ItalianGreetingRepo un database
+    @Bean
     ItalianGreetingRepository italianGreetingRepository(){
         return new ItalianGreetingRepositoryImpl();
     }
