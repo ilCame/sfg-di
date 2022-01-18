@@ -4,7 +4,12 @@ import guru.springframework.sfgdi.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
+/*omettendolo non riuscirebbe a trovare i servizi, questo perche' lui cerca i servizi nel package di base
+* in questo caso gli stiamo dicendo di scannerizzare i componenti sia di questo package che del package .pet
+* */
+@ComponentScan(basePackages = {"guru.springframework.sfgdi", "guru.springframework.pet"})
 @SpringBootApplication
 public class SfgDiApplication {
 
