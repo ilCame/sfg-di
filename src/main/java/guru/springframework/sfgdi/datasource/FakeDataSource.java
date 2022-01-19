@@ -1,0 +1,33 @@
+package guru.springframework.sfgdi.datasource;
+
+public class FakeDataSource {
+
+    private String username;
+    private String password;
+    private String jdbcurl;
+
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getIdbcurl() {
+        return jdbcurl;
+    }
+
+    public void setJdbcurl(String idbcurl) {
+        this.jdbcurl = idbcurl;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+}
