@@ -1,7 +1,5 @@
 package guru.springframework.pet;
 
-import org.springframework.stereotype.Service;
-
 public class PetServiceFactory {
 
     public PetService getPetService(String petType){
