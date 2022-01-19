@@ -5,11 +5,9 @@ import guru.springframework.pet.PetServiceFactory;
 import guru.springframework.sfgdi.repositories.ItalianGreetingRepository;
 import guru.springframework.sfgdi.repositories.ItalianGreetingRepositoryImpl;
 import guru.springframework.sfgdi.services.*;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
-import org.springframework.context.annotation.Profile;
+import org.springframework.context.annotation.*;
 
+@ImportResource("classpath:sfgdi-config.xml") // con questa istruzione stiamo dicendo di guardare al file XML (possiamo farlo sia sul main che su questa classe)
 @Configuration
 public class GreetingServiceConfig {
 
@@ -53,7 +51,7 @@ public class GreetingServiceConfig {
         return new PrimaryGreetingService();
     }
 
-    @Bean
+    //@Bean perche' l'ho definito nel file XML
     ConstructorGreetingService constructorGreetingService(){
         return new ConstructorGreetingService();
     }
