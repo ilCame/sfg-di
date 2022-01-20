@@ -7,8 +7,9 @@ import guru.springframework.sfgdi.repositories.ItalianGreetingRepository;
 import guru.springframework.sfgdi.repositories.ItalianGreetingRepositoryImpl;
 import guru.springframework.sfgdi.services.*;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.*;
-
+@EnableConfigurationProperties(SfgConstructorConfig.class) // ci permette di setuppare e di portarlo come un componente spring
 @ImportResource("classpath:sfgdi-config.xml")
 @Configuration
 public class GreetingServiceConfig {
