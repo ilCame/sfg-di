@@ -15,7 +15,7 @@ public class FakeDataSource {
         this.password = password;
     }
 
-    public String getIdbcurl() {
+    public String getJdbcurl() {
         return jdbcurl;
     }
 
