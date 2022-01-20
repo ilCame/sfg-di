@@ -1,7 +1,16 @@
 spring:
   profiles:
-    active: dog,ES,dev
+    active: dog,ES,prod
 guru:
   username: ymlUsername
   password: ymlPassword
   jdbcurl:  ymlJdbc
+
+---  #questo ci segnala che sta per iniziare un nuovo file di configurazione
+
+spring:
+  profiles: prod
+guru:
+  username: prodymlUsername
+  password: prodymlPassword
+  jdbcurl:  prodymlJdbc
