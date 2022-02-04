@@ -5,5 +5,74 @@
 
 
     <!-- creiamo un bean -->
-    <bean name="constructorGreetingService" class="guru.springframework.sfgdi.services.ConstructorGreetingService"/>
+
+    <bean class = "guru.springframework.pet.PetServiceFactory"
+          name = "petServiceFactory2"/>
+
+    <bean class="guru.springframework.sfgdi.repositories.ItalianGreetingRepositoryImpl"
+          name="italianGreetingRepository"/>
+
+    <bean class="guru.springframework.sfgdi.config.SfgConfiguration"
+          name="sfgConfiguration">
+        <property name="username" ref="pippo"/>
+        <property name="jdbcurl" ref="pippo"/>
+        <property name="password" ref="pippo"/>
+    </bean>
+
+    <bean class="guru.springframework.sfgdi.datasource.FakeDataSource"
+          name="fakeDataSource">
+        <property name="username" ref="pippo"/>
+        <property name="jdbcurl" ref="pippo"/>
+        <property name="password" ref="pippo"/>
+    </bean>
+
+    <!-- Servicies -->
+    <bean class="guru.springframework.sfgdi.services.ConstructorGreetingService"
+          name="constructorGreetingService"/>
+    <bean class = "guru.springframework.sfgdi.services.PropertyInjectedGreetingService"
+          name = "propertyInjectedGreetingService"/>
+    <bean class = "guru.springframework.sfgdi.services.SetterInjectedGreetingService"
+          name = "setterInjectedGreetingService" />
+    <bean class = "guru.springframework.sfgdi.services.PrimaryGreetingService"
+          name = "primaryGreetingService"
+          primary = "true"/>
+    <bean class = "guru.springframework.sfgdi.services.I18nItalianGreetingService"
+          name = "i18nService">
+        <constructor-arg ref = "italianGreetingRepository"/>
+    </bean>
+
+    <!-- Controllers -->
+    <bean class = "guru.springframework.sfgdi.controllers.PropertyInjectionController"
+          name = "propertyInjectionController" />
+
+    <bean id="pippo" class="java.lang.String"/>
+
+    <beans profile = "EN">
+        <bean class = "guru.springframework.sfgdi.services.I18nEnglishGreetingService"
+              name = "i18nService"/>
+    </beans>
+
+    <beans profile="ES">
+        <bean class = "guru.springframework.sfgdi.services.I18nItalianGreetingService"
+              name = "i18nItalianGreetingService">
+            <constructor-arg ref = "italianGreetingRepository"/>
+        </bean>
+    </beans>
+
+    <beans profile = "dog">
+        <bean class = "guru.springframework.pet.DogPetService"
+              name = "dogPetService">
+        </bean>
+    </beans>
+
+    <beans profile="cat">
+        <bean class = "guru.springframework.pet.CatPetService"
+              name = "catPetService"/>
+    </beans>
+
+
 </beans>
+
+
+
+

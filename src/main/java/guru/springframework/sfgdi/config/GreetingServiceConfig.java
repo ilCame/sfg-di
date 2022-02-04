@@ -14,6 +14,7 @@ import org.springframework.context.annotation.*;
 @Configuration
 public class GreetingServiceConfig {
 
+    /*
     @Bean
     FakeDataSource fakeDataSource(SfgConfiguration sfgConfiguration){
         FakeDataSource fakeDataSource = new FakeDataSource();
@@ -22,6 +23,7 @@ public class GreetingServiceConfig {
         fakeDataSource.setPassword(sfgConfiguration.getPassword());
         return fakeDataSource;
     }
+     */
     @Bean
     PetServiceFactory petServiceFactory(){
         return new PetServiceFactory();
@@ -39,36 +41,5 @@ public class GreetingServiceConfig {
         return petServiceFactory().getPetService("cat");
     }
 
-    @Bean
-    ItalianGreetingRepository italianGreetingRepository(){
-        return new ItalianGreetingRepositoryImpl();
-    }
 
-    @Profile({"ES", "default"})
-    @Bean("i18nService")
-    I18nItalianGreetingService i18nItalianGreetingService(ItalianGreetingRepository italianGreetingRepository){
-        return new I18nItalianGreetingService(italianGreetingRepository);
-    }
-
-    @Profile("EN")
-    @Bean
-    I18nEnglishGreetingService i18nService(){
-        return new I18nEnglishGreetingService();
-    }
-
-    @Primary
-    @Bean
-    PrimaryGreetingService primaryGreetingService(){
-        return new PrimaryGreetingService();
-    }
-
-    @Bean
-    PropertyInjectedGreetingService propertyInjectedGreetingService(){
-        return new PropertyInjectedGreetingService();
-    }
-
-    @Bean
-    SetterInjectedGreetingService setterInjectedGreetingService(){
-        return new SetterInjectedGreetingService();
-    }
 }
